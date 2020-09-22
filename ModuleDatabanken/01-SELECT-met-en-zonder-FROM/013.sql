@@ -6,7 +6,10 @@
 
 SELECT FirstName as Voornaam
 		, LastName as Familienaam
-		, ISNULL(State, Country) as Plaats
-		FROM Customer
+		, Plaats = CASE
+			WHEN State is null then Country
+			ELSE State + ' (' + Country + ' )'
+		END
+FROM Customer
 
 
