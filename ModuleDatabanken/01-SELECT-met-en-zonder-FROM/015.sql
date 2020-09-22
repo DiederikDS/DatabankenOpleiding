@@ -2,4 +2,5 @@
 -- Gebruik NULLIF om NULL weer te geven in kolom "zelfde"  
 -- Gebruik NULLIF met 2 verschillende waarden om 'anders' weer te geven in kolom "verschillend"
 
-
+SELECT NULLIF(1 ,1) as Zelfde
+		, ISNULL( NULLIF(1, 2), 'anders') as Verschillend
