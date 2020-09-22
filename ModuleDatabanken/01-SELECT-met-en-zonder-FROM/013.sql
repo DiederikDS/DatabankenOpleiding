@@ -4,4 +4,9 @@
 -- Plaats is het land (Country) als State NULL is.  
 -- Als State niet NULL is, geef je "State (Country)" weer
 
+SELECT FirstName as Voornaam
+		, LastName as Familienaam
+		, ISNULL(State, Country) as Plaats
+		FROM Customer
+
 
