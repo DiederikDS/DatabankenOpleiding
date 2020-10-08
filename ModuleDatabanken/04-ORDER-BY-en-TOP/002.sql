@@ -4,4 +4,12 @@
 -- Orden de tracks aflopend op aantal minuten (afgerond naar beneden), en daarna oplopend op de prijs per track.
 -- Gebruik SELECT TOP om enkel de eerste 100 tracks weer te geven.
 
-
+SELECT TOP(100)
+	FLOOR (Milliseconds / 60000) as LengteMinuten
+	, UnitPrice
+	, Name
+FROM Track
+WHERE FLOOR (Milliseconds / 60000) < 10
+ORDER BY 
+	FLOOR (Milliseconds / 60000) Desc
+	, UnitPrice Asc;
