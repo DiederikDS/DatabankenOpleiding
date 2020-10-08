@@ -3,4 +3,12 @@
 -- Selecteer enkel de tracks die minder dan 10 minuten duren.
 -- Orden de tracks aflopend op aantal minuten (afgerond naar beneden), en daarna oplopend op de prijs per track.
 
-
+SELECT 
+	FLOOR (Milliseconds / 60000) as LengteMinuten
+	, UnitPrice
+	, Name
+FROM Track
+WHERE FLOOR (Milliseconds / 60000) < 10
+ORDER BY 
+	FLOOR (Milliseconds / 60000) Desc
+	, UnitPrice Asc;
