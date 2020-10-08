@@ -3,4 +3,4 @@
 
 SELECT DISTINCT *
 FROM 
-(SELECT FirstName FROM Employee UNION SELECT FirstName FROM Customer) as Naam
+(SELECT FirstName FROM Employee INTERSECT SELECT FirstName FROM Customer) as Naam
