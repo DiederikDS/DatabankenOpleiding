@@ -10,10 +10,10 @@ Via de SQL Server service waarmee je was verbonden tijdens uitvoeren van het scr
 
 Voorstel eindopdracht:
 
-Ik verzamel muziek (hoofdzakelijk cd's), ik vroeg me af of ik hier rond een database voor een cd winkel kan maken>
-Ik heb +- 250 cd's, +- 10 vinyl, en 3 kasettes.Deze kunnen ingedeeld worden op: Genre, Artiest, Sub Genre, Aantal tracks, Recentie(score tussen 1-5?), Jaar van uitgave, prijs, stockage.
+Ik verzamel muziek (hoofdzakelijk cd's), ik vroeg me af of ik hier rond een database voor een applicatie kan maken. Met deze fictieve applicatie kan je, je verzameling opslaan, en delen met andere gebruikers.
+Volgende tabellen kunnen gemaakt worden:Album, Genre, Arties, Sub-genre, #tracks, Recentie (Score tussen 1-5), platenlabel, mediatype.
 
 Use cases:
-Er zijn nieuwe cd's gekocht en de verkoper wil deze toevoegen aan de database.
-Een klant wil zien of cd X in stock is, en raadpleegt de database.
-De kassier wil tijdens het afrekenen de prijzen van de cd's weten en optellen, hij/zij raadpleegt de database.
+ -Ik heb een nieuwe cd gekocht en wil deze toevoegen in mijn database. (Database aanpassen)
+ -Ik ben een andere gebruiker en ik wil weten hoeveel cd's er in deze database zitten. (Database raadplegen)
+ -Ik wil weten hoeveel percent van de cd's in de database tot genre X behoren. (Database raadplegen/ Analiseren)
