@@ -1,7 +1,8 @@
 Scalaire functie = Functie die 1 argument en 1 resultaat geeft. Voorbeeld:
 	SQRT(4) = 2
-Select is altijd de laatse stap in een statement. (hoewel deze als eerste genoteerd is)
+Select is altijd de laatse stap in een statement. Deze bepaald welke kolommen er in het resultaat zullen zitten. (hoewel deze als eerste genoteerd is)
 Select in een select enkel mogelijk wanneer de geneste select altijd 1 rij en 1 kolom als resutaat heeft.
+From clause die specifieert een tabel, een select of een view, of een combinatie van de vorige.
 View (Variabele) = select statement die opgelslaan is in de database. (ddl) Voorbeeld:
 	CREATE VEIW [klantenUitBelgie]
 	AS
@@ -51,6 +52,9 @@ Voorbeeld:
 
 Aggregate Funtions = Functies die 1 argument vereisen maar deze waarde moet een kolom zijn en Geeft 1 resultaat. Voorbeeld:
 	AVG(Tabel X) die vraagt een kolom en zal daar dan het gemiddelde van returnen.
+
+View is een veriabele in SQL waar een statement in is opgeslagen. Voorbeeld:
+Create view [Naam]
 
 
 
