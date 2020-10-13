@@ -10,11 +10,16 @@ Via de SQL Server service waarmee je was verbonden tijdens uitvoeren van het scr
 
 # Voorstel eindopdracht:
 
-Ik verzamel muziek (hoofdzakelijk cd's), ik vroeg me af of ik hier rond een database voor een applicatie kan maken. Met deze fictieve applicatie kan je, je verzameling opslaan, en delen met andere gebruikers.
+Database van spelers voor een volleybalclub. De club heeft 3 ploegen die elk in een andere reeks (procinviale, divisie,...) spelen.
 
-Volgende tabellen kunnen gemaakt worden:Album, Genre, Arties, Sub-genre, #tracks, Recentie (Score tussen 1-5), platenlabel, mediatype.
+Mogelijke tables: Ploegen, Spelers, Posities, Trainingsdagen, 
+
+Gebruikers:
+ - 
+ - 
+ - 
 
 Use cases:
- - Ik heb een nieuwe cd gekocht en wil deze toevoegen in mijn database. (Database aanpassen)
- - Ik ben een andere gebruiker en ik wil weten hoeveel cd's er in deze database zitten. (Database raadplegen)
- - Ik wil weten hoeveel percent van de cd's in de database tot genre X behoren. (Database raadplegen/ Analiseren)
+ - 
+ - 
+ - 
