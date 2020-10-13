@@ -1,0 +1,56 @@
+Scalaire functie = Functie die 1 argument en 1 resultaat geeft. Voorbeeld:
+	SQRT(4) = 2
+Select is altijd de laatse stap in een statement. (hoewel deze als eerste genoteerd is)
+Select in een select enkel mogelijk wanneer de geneste select altijd 1 rij en 1 kolom als resutaat heeft.
+View (Variabele) = select statement die opgelslaan is in de database. (ddl) Voorbeeld:
+	CREATE VEIW [klantenUitBelgie]
+	AS
+	SELECT * FROM Customer
+	WHERE Customer.Country = 'Belgium';
+Views gebruiken als "from" in een SELECT statement. Voorbeeld:
+	SELECT City
+	From klantenUitBelgie
+Select nesting in FROM clause. Voorbeeld:
+	SELECT * 
+	FROM (
+		SELECT 123 AS getal
+		) AS getallen1
+	) AS getallen2
+Performantie = aantal geheugen nodig om een statement uit te voeren (te controleren via een profiler) (vooral bij diep nesting in de FROM clause).
+Execution plan (eenvoudige profiler) = Alle stappen die uitgevoerd worden om van een query een resultaat te bekomen. 
+Natural join = inner join tussen 2 tabellen waar 2 kolommen met dezelfde naam gemerged worden.
+SELECT TOP 10 * = geeft de eerste 10 resultaten. Wanneer dit gecombineerd is met een order by, wordt de "TOP" eerste uitgevoerd.
+Union = operator die het resultaat van 2 statements combineert in 1 kolom, Hier kunnen geen dubbels in zitten (net zoals distinct) Voorbeeld:
+	SELECT 123 as Alpha
+	UNION
+	SELECT 456 as Beta
+De naam vd kolom is Alpha want dat is de alias van de eerste SELECT
+EXCEPT = operator die het resultaat van SELECT 1 verminderd met het resultaat van SELECT 2.
+INTERSECT = Operator die enkel het resultaat geeft die in beide alle SELECT's voorkomen (gemeenschappelijk zijn in alle SELECT's).
+Kansberekening met deze operatoren. Voorbeeld:
+SELECT *
+FROM
+(SELECT 1 c3 UNION SELECT 0) AS cijfer3
+, (SELECT 1 c2 UNION SELECT 0) AS cijfer2
+, (SELECT 1 c1 UNION SELECT 0) AS cijfer1
+, (SELECT 1 c3 UNION SELECT 0) AS cijfer0
+Dit zal alle mogelijke combinaties van 4 letters die 0/1 kunnen zijn weergeven.
+
+GROUP BY = resultaat splitsen in groepen waarbij elke record maar 1 keer kan voorkomen (ingebouwde distinct) (creeert een groep waar bepaalde functies kunnen op uitgevoerd worden).
+Op deze groepen kan je geen WHERE gebruiken maar gebruik je HAVING
+Wanneer de eerste SELECT statement een WHERE clause heeft en een GROUP BY dan zal de WHERE clause eerst gebeuren en dan pas de GROUP BY. (alles weggefilterd door WHERE komt niet in de resulterende groepen terect)
+Wanneer er iets in de GROUP BY clause staat dan kan deze ook in de SELECT komen, omgekeerd gaat niet.
+ORDER BY kan je ook gebruiken om de groepen te groeperen.
+Voorbeeld:
+	SELECT FirstName
+		, COUNT(*)
+	FROM Customer
+	WHERE LastName <> 'Philips'
+	GROUP BY FirstName
+	HAVING COUNT(*) > 1
+
+Aggregate Funtions = Functies die 1 argument vereisen maar deze waarde moet een kolom zijn en Geeft 1 resultaat. Voorbeeld:
+	AVG(Tabel X) die vraagt een kolom en zal daar dan het gemiddelde van returnen.
+
+
+
