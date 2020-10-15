@@ -54,7 +54,10 @@ Aggregate Funtions = Functies die 1 argument vereisen maar deze waarde moet een 
 	AVG(Tabel X) die vraagt een kolom en zal daar dan het gemiddelde van returnen.
 
 View is een veriabele in SQL waar een statement in is opgeslagen. Voorbeeld:
-Create view [Naam]
+	Create view [Naam]
 
+Volgorde uitvoering commando's = From, Where, Group by, Having, Order by, Select
+
+Constraint: een statement waaraan de data in een table moet aan voldoen. Gebruikt in een CREATE TABLE statement
 
 
