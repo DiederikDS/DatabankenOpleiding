@@ -17,6 +17,7 @@ Select nesting in FROM clause. Voorbeeld:
 		SELECT 123 AS getal
 		) AS getallen1
 	) AS getallen2
+
 Performantie = aantal geheugen nodig om een statement uit te voeren (te controleren via een profiler) (vooral bij diep nesting in de FROM clause).
 Execution plan (eenvoudige profiler) = Alle stappen die uitgevoerd worden om van een query een resultaat te bekomen. 
 Natural join = inner join tussen 2 tabellen waar 2 kolommen met dezelfde naam gemerged worden.
@@ -25,6 +26,7 @@ Union = operator die het resultaat van 2 statements combineert in 1 kolom, Hier 
 	SELECT 123 as Alpha
 	UNION
 	SELECT 456 as Beta
+
 De naam vd kolom is Alpha want dat is de alias van de eerste SELECT
 EXCEPT = operator die het resultaat van SELECT 1 verminderd met het resultaat van SELECT 2.
 INTERSECT = Operator die enkel het resultaat geeft die in beide alle SELECT's voorkomen (gemeenschappelijk zijn in alle SELECT's).
@@ -60,4 +62,25 @@ Volgorde uitvoering commando's = From, Where, Group by, Having, Order by, Select
 
 Constraint: een statement waaraan de data in een table moet aan voldoen. Gebruikt in een CREATE TABLE statement
 
+Normalisatie sql databases zie uitleg op engelstalige wikipedia.(verschillende normaalvormen)
+
+Redundancie: gegevens komen meerder keren voor (op een andere manier), kan problemen geven bij relationele databases. Bijvoorbeeld: iemand is verhuist en zn adres moet gewijzigt worden.
+
+Kandidaat sleutel: een supersleutel waar je geen kolom meer kan wegnemen om nog steeds een super sleutel te zijn.
+Supersleutel: Een combinatie van 2 of meerdere kolommen waar je aan de hand van alle info in de rij kent.
+Primaire sleutel: Een unieke sleutel die ook een kandidaat sleutel is.
+Unieke sleutel: Combinatie van kolomen die altijd uniek zullen zijn.
+Foreing sleutel: Kolom uit ene tabel verwijst naar kolom uit andere tabel.
+Voorbeel creeren tabel met primary key:
+	CREATE TABLE [dbo].ToothbrushModels (
+		[ModelId] INT NOT NULL PRIMARY KEY
+		,[Manufacturer] NCHAR(50) NOT NULL
+		,[Model] NCHAR(50) NOT NULL
+		,[ModelFullName] NCHAR(50) NOT NULL
+		,[Country] NCHAR(50) NOT NULL
+		CONSTRAINT AK_Tandenborstel UNIQUE KEY (Manufacturer, Model)
+	)
+
+1 veel relatie: 1 record in een tabel komt overeen met veel andere records uit een andere tabel.
+Een foreign key kan toegevoegd worden aan de veel tabel en verwijst naar de 1 tabel
 
