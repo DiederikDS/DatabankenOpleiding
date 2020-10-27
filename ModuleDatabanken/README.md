@@ -10,7 +10,7 @@ Via de SQL Server service waarmee je was verbonden tijdens uitvoeren van het scr
 
 # Voorstel eindopdracht:
 
-Database van spelers voor een volleybalclub. De club heeft verschillende ploegen die elk in een andere reeks (procinviale, divisie,...) spelen.
+Database van leden van een volleybalclub. De club heeft verschillende ploegen die elk in een andere reeks (procinviale, divisie,...) spelen.
 
 ## Mogelijke tables
 
@@ -20,11 +20,13 @@ Database van spelers voor een volleybalclub. De club heeft verschillende ploegen
  - Reeksen
  - Competitie stand
  - Chauffeurs voor uitwedstrijden
+ - Sponsers
+ - Wedstrijden
 
 ## Gebruikers
- - 
- - 
- - 
+
+ - Spelers moeten toegevoed of verwijdert worden. 
+ - Informatie over spelers of ploegen opzoeken.
 
 ## Use cases
  - Er is een nieuwe speler en als trainer/coach moet ik deze toevoegen in de database.
