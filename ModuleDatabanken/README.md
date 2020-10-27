@@ -19,8 +19,6 @@ Database van leden van een volleybalclub. De club heeft verschillende ploegen di
  - Posities
  - Reeksen
  - Competitie stand
- - Chauffeurs voor uitwedstrijden
- - Sponsers
  - Wedstrijden
 
 ## Gebruikers
