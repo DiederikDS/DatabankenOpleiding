@@ -66,11 +66,13 @@ Normalisatie sql databases zie uitleg op engelstalige wikipedia.(verschillende n
 
 Redundancie: gegevens komen meerder keren voor (op een andere manier), kan problemen geven bij relationele databases. Bijvoorbeeld: iemand is verhuist en zn adres moet gewijzigt worden.
 
-Kandidaat sleutel: een supersleutel waar je geen kolom meer kan wegnemen om nog steeds een super sleutel te zijn.
-Supersleutel: Een combinatie van 2 of meerdere kolommen waar je aan de hand van alle info in de rij kent.
-Primaire sleutel: Een unieke sleutel die ook een kandidaat sleutel is.
+Super sleutel: Een combinatie van 1 of meerdere kolommen waar je aan de hand van alle info in de rij kent.
+Kandidaat sleutel: een supersleutel waar je geen kolom meer kan wegnemen om nog steeds een super sleutel te zijn. Uit deze kandidaat sleutels kies je de beste sleutel (primaire).
+Primaire sleutel: Een kolom of een combinatie van kolommen die elke waarde in elke kolom uniek kan identificeren.
+
+Compositieve sleutel: Een sleutel die uit een combinatie van kolommen bestaat.
 Unieke sleutel: Combinatie van kolomen die altijd uniek zullen zijn.
-Foreing sleutel: Kolom uit ene tabel verwijst naar kolom uit andere tabel.
+Foreing sleutel: 1 of meerdere kolommen uit een tabel verwijst naar de primaire sleutel van andere tabel.
 Voorbeel creeren tabel met primary key:
 	CREATE TABLE [dbo].ToothbrushModels (
 		[ModelId] INT NOT NULL PRIMARY KEY
@@ -84,3 +86,20 @@ Voorbeel creeren tabel met primary key:
 1 veel relatie: 1 record in een tabel komt overeen met veel andere records uit een andere tabel.
 Een foreign key kan toegevoegd worden aan de veel tabel en verwijst naar de 1 tabel
 
+Database normaalvormen:
+
+1NF
+	1) Elke record heeft 1 value (atomicity).
+	2) Elke record in een kolom moet gelijke data hebben vb: enkel namen in de "names" kolom opslaan.
+	3) De volgorde van de kolommen maakt niet uit.
+	4) Elke Kolom moet eem unieke naam hebben.
+	5) Geen herhalende groepen vb: telefoon nummer 1 en telefoon nummer 2. (niet echt een regel maar een goede practice)
+
+2NF
+	1) Moet aan alle regels van de 1NF voldoen.
+	2) Er mag geen partial dependency zijn. Een niet-primaire kolom moet afhangen van elke kolom uit de primaire sleutel.
+
+3NF
+	1) Moet aan alle regels van de 2NF voldoen.
+	2) Er mag geen transitive dependency zijn. Een niet primaire kolom moet direct afhankelijk zijn van de primaire sleutel en niet van een andere niet-primaire kolom die afhankelijk is van de sleutel.
+	
