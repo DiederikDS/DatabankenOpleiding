@@ -125,6 +125,16 @@ SQL database maken:
 
 Om een project aan te passen voer je ook dezelfde stappen uit. (maak je script, "build" je script, controleer je script, "publish" je script)
 
+Tabels maken in een Database:
+Ofwel rechtermuisknop in je Server object explorer -> add table
+Ofwel via een query op de database zelf.
+
+Sql script maken via sql server management studio:
+Klik rechts op de database -> tasks -> generate scripts...
+Volg de wizard
+Kies de volledige database of sla enkele items over.
+Zet alles in 1 bestand en let goed op de directory waar het bestand geplaatst wordt.
+
 Voorbeeld vragen dml examen:
 
 /*
