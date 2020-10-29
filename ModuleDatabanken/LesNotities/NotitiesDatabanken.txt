@@ -107,3 +107,7 @@ Database normaalvormen:
 	2) Er mag geen transitive dependency zijn. Een niet primaire kolom moet direct afhankelijk zijn van de primaire sleutel en niet van een andere niet-primaire kolom die afhankelijk is van de sleutel.
 
 Eind opdracht zie wiki
+
+"IDENTITY" kan je toevoegen aan een kolom, deze wordt dan automatisch ingevuld wanneer er een nieuwe record komt die deze kolom niet specifiek invuld. (een teller).
+Standaard is het increment 1 (gaat dus met 1 omhoog).
+Identity seed is de waarde waar het begint te tellen. 
