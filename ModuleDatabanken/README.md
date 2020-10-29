@@ -31,4 +31,6 @@ Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, 
  - Ik heb een recept gemaakt en wil deze graag toevoegen.
  - Ik heb een recept gevolgd en wil deze graag een score geven
  - Ik ben vergeten om labels toe te voegen aan een recept, ik ga deze dus alsnog toevoegen.
- - 
+ - Ik ben vegetarisch en zoek enkel vegetarische recepten.
+ - Ik ben allergisch aan noten en zoek daarom recepten die dit niet bevatten.
+ - Ik heb nog enkele ingredienten in mijn frigo en zoek een recept die ik hiermee kan maken.
