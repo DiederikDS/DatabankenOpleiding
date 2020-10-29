@@ -124,3 +124,62 @@ SQL database maken:
 	"Publish" zal uiteindelijk het script uitvoeren.
 
 Om een project aan te passen voer je ook dezelfde stappen uit. (maak je script, "build" je script, controleer je script, "publish" je script)
+
+Voorbeeld vragen dml examen:
+
+/*
+
+(3 punten)
+
+Verwijder alles uit de tabel InvoiceLine.
+--
+Pas op! Andere vragen gaan er niet van uit dat er geen data in die tabel zit.
+Zorg dus dat je de database kan herstellen
+of het verwijderen ongedaan kan maken met rollback.
+
+*/
+
+/*
+
+Geef de volgende informatie per unieke klant:
+
+* voornaam (Customer.FirstName)
+* familienaam (Customer.LastName)
+* AantalFacturen: het aantal facturen
+(records in tabel Invoice) per klant
+* [Totaal uitgaven klant]: som van de totaalprijzen
+van de facturen van de klant
+* [Gemiddelde totaalprijs per factuur]: de gemiddelde
+totaalprijs op de factuur per klant
+
+Sorteer de resultaten volgens totale uitgaven
+van elke klant. De klanten die meer gespendeerd
+hebben komen voor de klanten die minder gespendeerd
+hebben.
+
+Hints:
+
+* Facturen kan je vinden in de tabel Invoice
+* De totaalprijs van een factuur kan je vinden
+in de kolom Invoice.Total
+
+*/
+
+/*
+
+Geef de FirstName, de LastName en Title kolommen
+van de tabel Employee voor de employees die geen
+vertegenwoordiger zijn voor klanten en die geen
+"entry level" werknemers zijn.
+
+Een "entry level" employee is een employee waarvoor
+er geen andere employee is die ernaar verwijst
+via de kolom ReportsTo.
+
+Een vertegenwoordiger van een klant kan je vinden
+via de foreign key FK_CustomerSupportRepId.
+
+Hou geen rekening met klanten waarvoor SupportRepId
+onbekend (dus NULL) is; dus laat die klanten weg.
+
+*/
