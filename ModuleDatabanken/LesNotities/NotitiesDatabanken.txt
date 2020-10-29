@@ -134,6 +134,9 @@ Klik rechts op de database -> tasks -> generate scripts...
 Volg de wizard
 Kies de volledige database of sla enkele items over.
 Zet alles in 1 bestand en let goed op de directory waar het bestand geplaatst wordt.
+Klik op advanced
+Types of data and script, kies schema en data.
+Done
 
 Voorbeeld vragen dml examen:
 
