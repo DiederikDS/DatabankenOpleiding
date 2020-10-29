@@ -100,7 +100,7 @@ Database normaalvormen:
 
 2NF
 	1) Moet aan alle regels van de 1NF voldoen.
-	2) Er mag geen partial dependency zijn. Een niet-primaire kolom moet afhangen van elke kolom uit de primaire sleutel.
+	2) Er mag geen partial dependency zijn. Een niet-primaire kolommen moeten afhangen van elke kolom uit de primaire sleutel.
 
 3NF
 	1) Moet aan alle regels van de 2NF voldoen.
@@ -111,3 +111,16 @@ Eind opdracht zie wiki
 "IDENTITY" kan je toevoegen aan een kolom, deze wordt dan automatisch ingevuld wanneer er een nieuwe record komt die deze kolom niet specifiek invuld. (een teller).
 Standaard is het increment 1 (gaat dus met 1 omhoog).
 Identity seed is de waarde waar het begint te tellen. 
+
+SQL database maken:
+
+1) Maak een nieuw project sql project in WGM
+
+2) "Build" bouwt het project.
+
+3) "Publisch" exporteert deze naar een databank. 
+	"Generate script" zal het script om deze databank te maken genereren en tonen.\
+		Hier bekijke je het script en kan je het nog eventueel aanpassen.
+	"Publish" zal uiteindelijk het script uitvoeren.
+
+Om een project aan te passen voer je ook dezelfde stappen uit. (maak je script, "build" je script, controleer je script, "publish" je script)
