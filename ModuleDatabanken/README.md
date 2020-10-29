@@ -10,24 +10,25 @@ Via de SQL Server service waarmee je was verbonden tijdens uitvoeren van het scr
 
 # Voorstel eindopdracht:
 
-Database van leden van een volleybalclub. De club heeft verschillende ploegen die elk in een andere reeks (procinviale, divisie,...) spelen.
+Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, revieuwen, labels (zoals vegetarisch, veganistisch, Oosters, ...), ... .
 
 ## Mogelijke tables
 
- - Ploegen
- - Spelers
- - Posities
- - Reeksen
- - Competitie stand
- - Wedstrijden
+ - Gebruikers
+ - Recepten
+ - Ingredienten
+ - Score
+ - Revieuws
+ - Labels
 
 ## Gebruikers
 
- - Spelers moeten toegevoed of verwijdert worden. 
- - Informatie over spelers of ploegen opzoeken.
+ - Iemand die recepten wil toevoegen.
+ - Iemand die recepten wil opzoeken.
 
 ## Use cases
- - Er is een nieuwe speler en als trainer/coach moet ik deze toevoegen in de database.
- - Ik speel in een lagere reeks en heb ambitie om hoger te spelen, ik gebruik de database om te kijken welke posities reeds bezet zijn in een andere ploeg.
- - Ik ben benieuwd naar de compitiestand van ploeg X, en raadpleeg de database.
- - Ik ben een trainer en wil graag een wisselen van traingingsdag met een andere ploeg, ik kijk in de database wanneer hun trainingsdag is.
+
+ - Ik heb een recept gemaakt en wil deze graag toevoegen.
+ - Ik heb een recept gevolgd en wil deze graag een score geven
+ - Ik ben vergeten om labels toe te voegen aan een recept, ik ga deze dus alsnog toevoegen.
+ - 
