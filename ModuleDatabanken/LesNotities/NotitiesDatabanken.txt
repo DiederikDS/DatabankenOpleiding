@@ -70,9 +70,12 @@ Super sleutel: Een combinatie van 1 of meerdere kolommen waar je aan de hand van
 Kandidaat sleutel: een supersleutel waar je geen kolom meer kan wegnemen om nog steeds een super sleutel te zijn. Uit deze kandidaat sleutels kies je de beste sleutel (primaire).
 Primaire sleutel: Een kolom of een combinatie van kolommen die elke waarde in elke kolom uniek kan identificeren.
 
+Voor de eindopracht zal je alle kandidaat sleutels moeten aanduiden6
+
 Compositieve sleutel: Een sleutel die uit een combinatie van kolommen bestaat.
 Unieke sleutel: Combinatie van kolomen die altijd uniek zullen zijn.
 Foreing sleutel: 1 of meerdere kolommen uit een tabel verwijst naar de primaire sleutel van andere tabel.
+
 Voorbeel creeren tabel met primary key:
 	CREATE TABLE [dbo].ToothbrushModels (
 		[ModelId] INT NOT NULL PRIMARY KEY
@@ -102,4 +105,5 @@ Database normaalvormen:
 3NF
 	1) Moet aan alle regels van de 2NF voldoen.
 	2) Er mag geen transitive dependency zijn. Een niet primaire kolom moet direct afhankelijk zijn van de primaire sleutel en niet van een andere niet-primaire kolom die afhankelijk is van de sleutel.
-	
+
+Eind opdracht zie wiki
