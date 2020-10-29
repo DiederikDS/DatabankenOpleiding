@@ -10,7 +10,7 @@ Via de SQL Server service waarmee je was verbonden tijdens uitvoeren van het scr
 
 # Voorstel eindopdracht:
 
-Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, reviewen, labels (zoals vegetarisch, veganistisch, Oosters, ...), ... .
+Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, revieuwen, labels (zoals vegetarisch, veganistisch, Oosters, ...), ... .
 
 ## Mogelijke tables
 
@@ -28,8 +28,7 @@ Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, 
 
 ## Use cases
 
- - Als iemand die graag recepten deelt wil ik deze publiceren op deze applicatie zodat andere mensen dit kunnen proberen en reviewen.
-Ik heb een recept gemaakt en wil deze graag toevoegen.
+ - Ik heb een recept gemaakt en wil deze graag toevoegen.
  - Ik heb een recept gevolgd en wil deze graag een score geven
  - Ik ben vergeten om labels toe te voegen aan een recept, ik ga deze dus alsnog toevoegen.
  - Ik ben vegetarisch en zoek enkel vegetarische recepten.
