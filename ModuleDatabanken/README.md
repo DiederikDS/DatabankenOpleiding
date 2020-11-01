@@ -10,6 +10,8 @@ Via de SQL Server service waarmee je was verbonden tijdens uitvoeren van het scr
 
 # Voorstel eindopdracht:
 
+
+
 Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, revieuwen, labels (zoals vegetarisch, veganistisch, Oosters, ...), ... .
 
 ## Mogelijke tables
