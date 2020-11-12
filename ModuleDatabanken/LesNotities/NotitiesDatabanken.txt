@@ -154,6 +154,12 @@ Met DECLARE kan je argumenten meegeven in een transactie (zowel gedeclareerde al
 	DECLARE @Achternaam varchar(100)
 Deze argumenten aanroepen doe je met @.
 Met SAVE TRANSACTION kan je een safe-point instellen zodat je kan terugkeren naar dat punt in de transactie, zo moet je niet de hele transactie ongedaan maken met ROLLBACK
+	SAVE TRANSACTION safePointNaam
+
+	ROLLBACK TRANSACTION safePointNaam
+
+
+
 
 
 Voorbeeld vragen dml examen:
