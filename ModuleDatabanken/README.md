@@ -28,7 +28,7 @@ Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, 
  - Iemand die recepten wil toevoegen.
  - Iemand die recepten wil opzoeken.
 
-## Use cases
+## Use cases (Bij meerdere statements, moet de transactie structuur gebruikt worden)
 
  - Ik heb een recept gemaakt en wil deze graag toevoegen.
  - Ik heb een recept gevolgd en wil deze graag een score geven
