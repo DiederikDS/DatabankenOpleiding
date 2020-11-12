@@ -174,7 +174,7 @@ Bij een IDENTITY wordt er een achterliggende sequence aangemaakt.
 Index: een naam die op een tabel of een view gedefineerd kan worden op basis van 1 of meerdere kolommen.
 Dit wordt gebruikt wanneer je tabel traag begint te worden. Zo kan je werken met een beperkt aantal kolommen, wanneer je tabel te groot is of regelmatig geraadpleegt wordt.
 
-
+Trigger: Kan toegevoegd worden op een tabel om bepaalde logica bij het deleten, inserten of updaten van data uit te voeren.
 
 Voorbeeld vragen dml examen:
 
