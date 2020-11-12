@@ -138,11 +138,23 @@ Klik op advanced
 Types of data and script, kies schema en data.
 Done
 
-Transacties: een opvolging van 1 of meerdere statements
+Transacties: een opvolging van 1 of meerdere statements (ACID = AtomicConsistentIsolatedDurable)
 1) Atomisch: Meerdere statments in een transactie worden altijd als 1 uitgevoerd. Er is geen tijdens de transactie, enkel een voor en een na.
 2) Consistent: Een statement kan de database niet invalid maken (bv een record maar half invullen)
 3) Isolated: Tegelijk uitvoeren van een transactie (meerdere personenen die op dezelfde database werken) kan niet, deze worden altijd na elkaar uitgevoerd. De ene transactie ondervindt geen invloed van de andere.
 4) Durable: Eenmaal de transactie is uitgevoerd, blijft het effect bestaan (zelfs na stroomuitval of onderbreking, aanwezig in alle databank systemen). bv wanneer een transactie uit 4 statements bestaat zullen alle 4 altijd uitgevoerd worden, nooit 2 wel en 2 niet bv. 
+
+Transacties kunnen geschreven worden tussen de keywords:
+	BEGIN TRANSACTION
+
+	COMMIT
+Met ROLLBACK kan je een statement in een transactie ongedaan maken, meestal vooraf gegaan door een predikaat zoals IF.
+Met DECLARE kan je argumenten meegeven in een transactie (zowel gedeclareerde als ongedeclareerde variabellen).
+	DECLARE @Naam varchar(100) = 'Diederik' 
+	DECLARE @Achternaam varchar(100)
+Deze argumenten aanroepen doe je met @.
+Met SAVE TRANSACTION kan je een safe-point instellen zodat je kan terugkeren naar dat punt in de transactie, zo moet je niet de hele transactie ongedaan maken met ROLLBACK
+
 
 Voorbeeld vragen dml examen:
 
