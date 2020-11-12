@@ -158,8 +158,18 @@ Met SAVE TRANSACTION kan je een safe-point instellen zodat je kan terugkeren naa
 
 	ROLLBACK TRANSACTION safePointNaam
 
+Procedure:Een deel statements opslaan om te hergebruiken.(een functie in sql)
+Te vinden onder Databases > Database > Programmability > Stored Procedures
+	CREATE PROCEDURE [dbo].procedurenaam
+		eventuele argumenten
+	AS
+		de SQL-statements
+	RETURN 0
+Procedures kun je aanroepen dmv: 
+	EXEC procedurenaam 'Parameter1', 'Parameter2'
 
-
+Sequence: Een teller die met een bepaalde waarde begint en een bepaalde waarde omhoog gaat.
+Bij een IDENTITY wordt er een achterliggende sequence aangemaakt.
 
 
 Voorbeeld vragen dml examen:
