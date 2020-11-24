@@ -1,3 +1,5 @@
+Oplossing oefeningen: https://github.com/pvoosten/CSharpDatabanken
+
 Scalaire functie = Functie die 1 argument en 1 resultaat geeft. Voorbeeld:
 	SQRT(4) = 2
 Select is altijd de laatse stap in een statement. Deze bepaald welke kolommen er in het resultaat zullen zitten. (hoewel deze als eerste genoteerd is)
