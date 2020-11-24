@@ -62,6 +62,8 @@ Volgorde uitvoering commando's = From, Where, Group by, Having, Order by, Select
 
 Constraint: een statement waaraan de data in een table moet aan voldoen. Gebruikt in een CREATE TABLE statement
 
+Resultaat van ee Query kan je omkeren door WHERE NOT ipv WHERE te gebruiken.
+
 Normalisatie sql databases zie uitleg op engelstalige wikipedia.(verschillende normaalvormen)
 
 Redundancie: gegevens komen meerder keren voor (op een andere manier), kan problemen geven bij relationele databases. Bijvoorbeeld: iemand is verhuist en zn adres moet gewijzigt worden.
@@ -175,6 +177,27 @@ Index: een naam die op een tabel of een view gedefineerd kan worden op basis van
 Dit wordt gebruikt wanneer je tabel traag begint te worden. Zo kan je werken met een beperkt aantal kolommen, wanneer je tabel te groot is of regelmatig geraadpleegt wordt.
 
 Trigger: Kan toegevoegd worden op een tabel om bepaalde logica bij het deleten, inserten of updaten van data uit te voeren.
+
+Subqueries kunnen gebruikt worden om een select op een select te doen, herkenbaar aan (NOT) IN, = ANY, en = ALL in de WHERE clause.
+IN = 
+= ANY = minstens 1 van de waarden uit het resultaat van de daaropvolgende select. kan ook < ANY, > ANY of <> ANY zijn (niet gelijk aan)
+ALL = Alle waarden uit het daaropvolgende resultaat van de daaropvolgende select> kan ook < ALL, > ALL of <> ALL zijn (niet gelijk aan)
+Niet gelinkte subquery kan onafhankelijk uitgevoerd worden.
+Kan gebruikt worden ipv een JOIN bv:
+	(Met Join)
+	SELECT c.FirstName, c.LastName
+	FROM Customer c join Employee e
+	ON c.LastName = e.LastName
+	
+	(Met Subquery)
+	SELECT FirstName, LastName
+	FROM Customer
+	WHERE LastName = ANY (
+		SELECT LastName
+		FROM Employee
+		)	
+
+COLLATION = een bepaalde rangschikking van karakters, dit kan ingesteld worden per kollom of per databank.	
 
 Voorbeeld vragen dml examen:
 
