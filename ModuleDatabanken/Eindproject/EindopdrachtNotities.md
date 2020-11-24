@@ -53,8 +53,6 @@ VALUES ('3', 'Chocomousse', '1', 'Diederik De Soete', 'Dessert', 'ei, room, choc
 INSERT INTO Recepten (ReceptId, Naam, AuteurId, Auteur, Maaltijd, Ingrediënten, Label, Beschrijving, Reviews, ReviewerId, Reviewers)
 VALUES ('4', 'Hamburger', '3', 'Robrecht De Soete', 'Dinner', 'Broodjes, Gehakt burger, Sla, Tomaat, Ajuin, Majonaise', 'Amerikaans', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lekker en vettig, Vraagt niet veel tijd en vult goed', '3, 4', 'Peter, Pieter' );
 
-
-
 ### 1NF
 
 Primaire sleutel: ReceptId, 
@@ -163,12 +161,29 @@ VALUES ('4', 'Hamburger', '3', 'Robrecht', 'Dinner', 'majonaise', 'Amerikaans', 
 INSERT INTO Recepten (ReceptId, Naam, AuteurID, Auteur, Maaltijd, Ingrediënten, Label, Beschrijving, Reviews, ReviewerId, Reviewers)
 VALUES ('4', 'Hamburger', '3', 'Robrecht', 'Dinner', 'majonaise', 'Amerikaans', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Vraagt niet veel tijd en vult goed', '4', 'Pieter' );
 
-
-
-
 ### 2NF
 
+CREATE TABLE [dbo].[Recepten] (
+    [ReceptId]     INT            NOT NULL,
+    [Naam]         NVARCHAR (50)  NOT NULL,
+    [AuteurId]     INT            NOT NULL,
+    [Dieet]        NVARCHAR (50)  NULL,
+    [Label]        NVARCHAR (50)  NULL,
+    [Ingrediënten] NVARCHAR (500) NOT NULL,
+    [Beschrijving] NVARCHAR (500) NOT NULL,
+    [ReviewerId]   INT            NULL,
+);
 
+CREATE TABLE [dbo].[Gebruikers] (
+    [GebruikerId]  INT            NOT NULL,
+    [Naam]         NVARCHAR (50)  NOT NULL
+);
+
+CREATE TABLE [dbo].[Review] (
+    [ReviewId]  INT            NOT NULL,
+    [Review]    NVARCHAR (500) NOT NULL,
+    [GebruikerId]  INT         NOT NULL
+);
 
 ### 3NF:
 
