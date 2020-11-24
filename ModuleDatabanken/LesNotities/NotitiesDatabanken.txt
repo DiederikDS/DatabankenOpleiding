@@ -181,7 +181,7 @@ Trigger: Kan toegevoegd worden op een tabel om bepaalde logica bij het deleten, 
 Subqueries kunnen gebruikt worden om een select op een select te doen, herkenbaar aan (NOT) IN, = ANY, en = ALL in de WHERE clause.
 IN = 
 = ANY = minstens 1 van de waarden uit het resultaat van de daaropvolgende select. kan ook < ANY, > ANY of <> ANY zijn (niet gelijk aan)
-ALL = Alle waarden uit het daaropvolgende resultaat van de daaropvolgende select> kan ook < ALL, > ALL of <> ALL zijn (niet gelijk aan)
+= ALL = Alle waarden uit het daaropvolgende resultaat van de daaropvolgende select> kan ook < ALL, > ALL of <> ALL zijn (niet gelijk aan)
 Niet gelinkte subquery kan onafhankelijk uitgevoerd worden.
 Kan gebruikt worden ipv een JOIN bv:
 	(Met Join)
