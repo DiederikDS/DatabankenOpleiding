@@ -201,6 +201,16 @@ Kan gebruikt worden ipv een JOIN bv:
 
 COLLATION = een bepaalde rangschikking van karakters, dit kan ingesteld worden per kollom of per databank.	
 
+Post deployment script: Gegevens toevoegen/verwijderen in je tabellen.
+Post deployment scripts moet je meerdere keren kunnen uitvoeren en hetzelfde resultaat krijgen.
+De volgorde is van belang mits je met foreign keys werkt bv:
+	Je hebt een database met 3 tabellen A,B,C waarvan C afhankelijk is van B, en B afhankelijk is van A.
+	Een record moet eerst in C bestaan voor je in B kan referen naar dat record.
+	Dan pas kan je in A een record toevoegen met een referentie naar dat record in B.
+	Voor verwijderen werk je in omgekeerde volgorde. A -> B -> C.
+
+
+
 Voorbeeld vragen dml examen:
 
 /*
