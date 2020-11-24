@@ -167,9 +167,10 @@ CREATE TABLE [dbo].[Recepten] (
     [ReceptId]     INT            NOT NULL,
     [Naam]         NVARCHAR (50)  NOT NULL,
     [AuteurId]     INT            NOT NULL,
-    [Dieet]        NVARCHAR (50)  NULL,
-    [Label]        NVARCHAR (50)  NULL,
-    [Ingrediënten] NVARCHAR (500) NOT NULL,
+    [DieetId]      INT            NULL,
+    [ReceptMaaltijdId] INT        NOT NULL,
+    [LabelId]      INT            NULL,
+    [ReceptIngredientenId]  INT   NOT NULL,
     [Beschrijving] NVARCHAR (500) NOT NULL,
     [ReviewerId]   INT            NULL,
 );
@@ -179,10 +180,42 @@ CREATE TABLE [dbo].[Gebruikers] (
     [Naam]         NVARCHAR (50)  NOT NULL
 );
 
-CREATE TABLE [dbo].[Review] (
+CREATE TABLE [dbo].[Reviews] (
     [ReviewId]  INT            NOT NULL,
     [Review]    NVARCHAR (500) NOT NULL,
     [GebruikerId]  INT         NOT NULL
+);
+
+CREATE TABLE [dbo].[Dieeten] (
+    [DieetId]  INT            NOT NULL,
+    [Dieet]    NVARCHAR (50) NOT NULL,
+);
+
+CREATE TABLE [dbo].[Labels] (
+    [LabelId]  INT            NOT NULL,
+    [Label]    NVARCHAR (50)  NOT NULL,
+);
+
+CREATE TABLE [dbo].[Maaltijden] (
+    [MaaltijdId]  INT            NOT NULL,
+    [Maaltijd]    NVARCHAR (50)  NOT NULL,
+);
+
+CREATE TABLE [dbo].[ReceptMaaltijden] (
+    [ReceptMaaltijdId]  INT      NOT NULL,
+    [MaaltijdId]        INT      NOT NULL,
+    [ReceptId]          INT      NOT NULL
+);
+
+CREATE TABLE [dbo].[Ingredienten] (
+    [IngredientId]  INT           NOT NULL,
+    [Ingredient]    NVARCHAR (50) NOT NULL,
+);
+
+CREATE TABLE [dbo].[ReceptIngredienten] (
+    [ReceptIngredientenId]  INT  NOT NULL,
+    [IngredientId]          INT  NOT NULL,
+    [ReceptId]              INT  NOT NULL
 );
 
 ### 3NF:
