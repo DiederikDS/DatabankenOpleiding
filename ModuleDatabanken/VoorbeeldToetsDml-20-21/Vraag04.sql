@@ -9,3 +9,8 @@ Zorg dus dat je de database kan herstellen
 of het verwijderen ongedaan kan maken met rollback.
 
 */
+
+    BEGIN TRANSACTION
+    DELETE FROM InvoiceLine
+    ALTER TABLE [dbo].InvoiceLine DROP CONSTRAINT FK_InvoiceLineInvoiceId, FK_InvoiceLineTrackId
+    ROLLBACK TRANSACTION
