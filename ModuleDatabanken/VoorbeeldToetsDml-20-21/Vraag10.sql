@@ -18,3 +18,11 @@ Hou geen rekening met klanten waarvoor SupportRepId
 onbekend (dus NULL) is; dus laat die klanten weg.
 
 */
+
+	SELECT e.FirstName, e.LastName, e.Title
+        FROM Employee e LEFT JOIN Customer c 
+        ON e.EmployeeId = c.SupportRepId
+        WHERE (SupportRepId IS NULL) AND  ReportsTo <> ANY (
+            SELECT EmployeeId
+            FROM Employee
+            ) OR ReportsTo IS NULL
