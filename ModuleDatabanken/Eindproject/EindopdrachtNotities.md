@@ -163,17 +163,17 @@ CREATE TABLE [dbo].[Gebruikers] (
     [GebruikersNaam] NVARCHAR (50)  NOT NULL,
     [VoorNaam]       NVARCHAR (50)  NOT NULL,
     [AchterNaam]     NVARCHAR (50)  NOT NULL,
-    [E-mail]         NVARCHAR (50)  NOT NULL,
+    [Email]          NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_Gebruikers] PRIMARY KEY CLUSTERED ([GebruikersId] ASC)
 );
 
 CREATE TABLE [dbo].[Recepten] (
-    [ReceptId]     INT            NOT NULL,
-    [ReceptNaam]   NVARCHAR (50)  NOT NULL,
-    [GebruikersId] INT            NOT NULL,
-    [Beschrijving] NVARCHAR (500) NOT NULL,
-    [Tijd]         INT            NULL,
-    [Personen]     INT            NULL,
+    [ReceptId]       INT            NOT NULL,
+    [ReceptNaam]     NVARCHAR (50)  NOT NULL,
+    [GebruikersId]   INT            NOT NULL,
+    [Beschrijving]   NVARCHAR (500) NOT NULL,
+    [Tijd]           INT                NULL,
+    [AantalPersonen] INT                NULL,
     CONSTRAINT [PK_Recepten] PRIMARY KEY CLUSTERED ([ReceptId] ASC),
     CONSTRAINT [FK_ReceptenGebruikersId] FOREIGN KEY ([GebruikersId]) REFERENCES [dbo].[Gebruikers] ([GebruikersId])
 );
@@ -232,4 +232,7 @@ CREATE TABLE [dbo].[ReceptIngrediënt] (
 
 
 ### 3NF:
+
+
+
 
