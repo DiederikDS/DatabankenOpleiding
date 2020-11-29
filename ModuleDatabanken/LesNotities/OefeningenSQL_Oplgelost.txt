@@ -357,34 +357,49 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 -- Los op met een ANY subquery. 
 
 
+	SELECT COUNT(ArtistId)
+	FROM Artist
+	WHERE ArtistId <> ANY 
+	( 
+	SELECT ArtistId
+	FROM Album
+	)
+
 
 46) Geef de voornaam en familienaam van alle klanten (Customer) waarvoor er een medewerker (Employee) bestaat met dezelfde voornaam.
 -- Los op met een niet-gelinkte subquery.
 
-
+	SELECT FirstName
+		, LastName
+	FROM Customer
+	WHERE FirstName = ANY (
+		SELECT FirstName
+		FROM Employee
+		)
 
 47) Geef de voornaam en familienaam van alle klanten (Customer) waarvoor er een medewerker (Employee) bestaat met dezelfde voornaam.
 -- Los op met een niet-gelinkte subquery, gedeclareerd in een parameter (dus met DECLARE en SET).
 
-
+	
 
 48) Schrijf een query die je eigen voornaam in de kolom
 --[Voornaam] zet, gevolgd door een kolom die je eigen
 --familienaam in de kolom [Familienaam] zet.
 
-
+	SELECT 'Diederik' AS Voornaam, 'De Soete' AS AchterNaam
 
 49) Geef de verschillende waarden van kolom Company die
 --voorkomen in tabel Customer
 
-
+	
 
 50) Verwijder alles uit de tabel InvoiceLine.
 --Pas op! Andere vragen gaan er niet van uit dat er geen data in die tabel zit.
 --Zorg dus dat je de database kan herstellen
 --of het verwijderen ongedaan kan maken met rollback.
 
-
+	SELECT DISTINCT Company
+	FROM Customer
 
 51) Geef de FirstName, de LastName en Title kolommen
 --van de tabel Employee voor de employees die geen
@@ -398,8 +413,16 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 --Hou geen rekening met klanten waarvoor SupportRepId
 --onbekend (dus NULL) is; dus laat die klanten weg.
 
-
-
+	
+	SELECT Emp.FirstName
+	,Emp.LastName
+	,Emp.Title
+	FROM Employee as Emp LEFT JOIN Customer as Cu ON Emp.EmployeeId = Cu.SupportRepId
+	WHERE Cu.SupportRepId IS NULL 
+	AND Emp.EmployeeId = ANY (
+		SELECT ReportsTo
+		FROM Employee
+		)
 
 52) Maak een schema-object (tabel of view) met de naam
 --MeerDanNLijnen aan dat altijd alle gegevens van de tabel
@@ -413,7 +436,11 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 --13 InvoiceLines zijn. Maak in dat SELECT-statement
 --gebruik van de nieuwe kolom AantalInvoiceLines.
 
-
+	SELECT Inv.CustomerId
+	, COUNT(InvL.InvoiceId)
+	FROM Invoice AS Inv LEFT JOIN InvoiceLine AS InvL ON Inv.InvoiceId = InvL.InvoiceId
+	WHERE InvL.InvoiceId = Inv.InvoiceId
+	GROUP BY Inv.CustomerId
 
 53) Geef de volgende informatie per unieke klant:
 --voornaam (Customer.FirstName)
@@ -433,18 +460,14 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 --De totaalprijs van een factuur kan je vinden
 --in de kolom Invoice.Total
 
-
-
-54) Geef de FirstName, de LastName en Title kolommen
---van de tabel Employee voor de employees die geen
---vertegenwoordiger zijn voor klanten en die geen
---"entry level" werknemers zijn.
---Een "entry level" employee is een employee waarvoor
---er geen andere employee is die ernaar verwijst
---via de kolom ReportsTo.
---Een vertegenwoordiger van een klant kan je vinden
---via de foreign key FK_CustomerSupportRepId.
---Hou geen rekening met klanten waarvoor SupportRepId
---onbekend (dus NULL) is; dus laat die klanten weg.
+SELECT Cu.FirstName
+	,Cu.LastName
+	,COUNT(Inv.InvoiceId) AS InvoiceLines
+	,SUM(Inv.Total) AS TotaalPrijs
+	,AVG(Inv.Total) AS GemiddeldeTotaalPrijs
+FROM Customer AS Cu FULL JOIN Invoice AS Inv ON Cu.CustomerId = Inv.CustomerId
+GROUP BY Cu.FirstName
+	, Cu.LastName
+ORDER BY TotaalPrijs DESC
 
 
