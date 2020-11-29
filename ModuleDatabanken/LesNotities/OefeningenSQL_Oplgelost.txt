@@ -236,16 +236,34 @@
 
 30) Maak een lijst van alle voornamen van Customers die ook de voornaam zijn van een Employee.
 -- Gebruik daarvoor 2 queries die je combineert met INTERSECT
+
+	SELECT FirstName
+	FROM Customer
+	INTERSECT
+	SELECT FirstName
+	FROM Employee
+
 31) Geef alle binaire getallen met 1 cijfer (dus 0 en 1), 1 cijfer per kolom.
 Dus het resultaat ziet er zo uit:
 rij 1: | 0 |
 rij 2: | 1 |
+
+	SELECT *
+	FROM
+	(SELECT 1 c1 UNION SELECT 0) AS Cijfer1
+
 32) Geef alle binaire getallen met 2 cijfers, 1 cijfer per kolom. 
 Dus het resultaat ziet er zo uit:
 rij 1: |0|0|
 rij 2: |0|1|
 rij 3: |1|0|
 rij 4: |1|1|
+
+	SELECT *
+	FROM
+	(SELECT 1 c1 UNION SELECT 0) AS Cijfer1
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer2
+
 33) Geef alle binaire getallen met 10 cijfers, 1 cijfer per kolom. 
 Dus het resultaat ziet er zo uit:
 rij 1:    |0|0|0|0|0|0|0|0|0|0|
@@ -257,8 +275,25 @@ rij 1021: |1|1|1|1|1|1|1|1|0|0|
 rij 1022: |1|1|1|1|1|1|1|1|0|1| 
 rij 1023: |1|1|1|1|1|1|1|1|1|0| 
 rij 1024: |1|1|1|1|1|1|1|1|1|1|
+
+	SELECT *
+	FROM
+	(SELECT 1 c1 UNION SELECT 0) AS Cijfer1
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer2
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer3
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer4
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer5
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer6
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer7
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer8
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer9
+	, (SELECT 1 c2 Union SELECT 0) AS Cijfer10
+
 34) Maak een overzicht van de albums met titel, naam artiest, aantal tracks, totale duur van het album (functie SUM), gemiddelde duur per track (functie AVG) en een door komma's gescheiden lijst van de tracknamen.
 -- Gebruik de functie STRING_AGG om de lijst met tracks in 1 cel van het resultaat te maken.
+
+	
+
 35) Geef per playlist de naam en het aantal tracks. Je hebt zowel een JOIN als een GROUP BY nodig.
 36) Gebruik letterlijke waarden in een INSERT statement om een record met je eigen naam toe te voegen aan de tabel Customers.
 -- Vul alleen de waarden in die nodig zijn.
