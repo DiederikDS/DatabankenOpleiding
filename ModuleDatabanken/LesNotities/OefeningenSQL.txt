@@ -1,83 +1,179 @@
 1) Bereken de waarde van 386 keer 418 min 5443
+
+
+
 2) Bereken de vierkantswortel van 2 (functie SQRT)
+
+
+
 3) Geef de vierkantswortel van 2,
 -- de vierkantswortel van 30,
 -- de som van beide vierkantsworels
 -- en de vierkantswortel van de som van beiden.
+
+
+
 4) Welk jaar zijn we nu?  
 -- Tip: gebruik current_timestamp en de functie datepart
+
+
+
 5) Welk jaar zijn we over 1000 dagen?  
 -- Tip: je kan een aantal dagen optellen bij current_timestamp
+
+
+
 6) Toon alle gegevens in de tabel dbo.Artist
+
+
+
 7) Toon enkel de namen van de verschillende artiesten (tabel Artist)
+
+
+
 8) Geef voornaam, familienaam en land van alle klanten (tabel customer).  
 -- Zorg dat de kolomnaam in het Nederlands wordt weergegeven
+
+
+
 9) Geef de landen waarin de klanten wonen (kolom country in tabel customer).  
 -- Zorg dat elk land maar 1 keer in het resultaat voorkomt
+
+
+
 10) Hoeveel klanten zijn er (tabel customers)?
+
+
+
 11) In hoeveel verschillende landen wonen de klanten?
+
+
+
 12) Bekijk de documentatie van CASE: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/case-transact-sql?  view=sql-server-2017
 -- Maak van de tabel Customer een overzicht met kolommen voornaam, familienaam en plaats.
 -- Voornaam en familienaam zijn aliassen van de FirstName en LastName kolommen
 -- Plaats is het land (Country) als dat niet gelijk is aan USA of Canada.
 -- Als het land gelijk is aan 'USA', geef dan State + ' (US)' weer.
 -- Als het land Canada is, geef dan Country + ' (' + State + ')' weer.
+
+
+
 13) Bekijk de documentatie van CASE: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/case-transact-sql?  view=sql-server-2017  
 -- Maak van de tabel Customer een overzicht met kolommen voornaam, familienaam en plaats.  
 -- Voornaam en familienaam zijn aliassen van de FirstName en LastName kolommen  
 -- Plaats is het land (Country) als State NULL is.  
 -- Als State niet NULL is, geef je "State (Country)" weer
+
+
+
 14) Oefening met COALESCE: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql?view=sql-server-2017  
 -- Geef van de tabel Customer de landen (Country) en deelstaten of provincies (State) waar klanten wonen.  
 -- Als er voor een land geen deelstaat of provincie is (dus als de waarde in die kolom NULL is), geef dan '(heel het land)' weer in plaats van NULL.
+
+
+
 15) Oefening met NULLIF: https://docs.microsoft.com/en-us/sql/t-sql/language-elements/nullif-transact-sql?view=sql-server-2017  
 -- Gebruik NULLIF om NULL weer te geven in kolom "zelfde"  
 -- Gebruik NULLIF met 2 verschillende waarden om 'anders' weer te geven in kolom "verschillend"
+
+
+
 16) Geef de voornaam en familienaam van alle klanten die in België wonen
+
+
+
 17) Geef voornaam en familienaam van alle klanten die in België of Frankrijk wonen  
 -- Gebruik OR
+
+
+
 18) Geef voornaam en familienaam van alle klanten die in België of Frankrijk wonen  
 -- Gebruik geen OR, maar wel IN
+
+
+
 19) Geef de naam van de tracks die minder dan 2 minuten duren.
 -- Geef ook de duurtijd van de track in  minuten en seconden (tot 3 cijfers na de komma).
 -- Gebruik aparte kolommen voor minuten en seconden, of probeer er een string van te maken in de vorm '00:00.000'
 -- Je kan gebruik maken van de kolom Milliseconds om de tijd van een track in milliseconden te weten.
+
+
+
 20) Geef de naam en de duurtijd van de tracks die tussen de 2 en de 3 minuten duren.
 -- Gebruik het sleutelwoord BETWEEN
+
+
+
 21) Geef de naam van de tracks die langer dan 3 minuten duren en tussen 1.5 en 2.5 dollar kosten.
+
+
+
 22) Geef het aantal tracks en het aantal verschillende albums die tracks bevatten waarvoor de componist (kolom composer) bekend is.
 -- Gebruik enkel de tabel Track om het antwoord te vinden.
 -- Gebruik de kolomaliassen aantalTracks en aantalAlbums om duidelijk weer te geven wat werd geteld.
+
+
+
 23) Hoeveel artiesten zijn er die geen album hebben? Of minder specifiek verwoord: zijn er artiesten opgeslagen in de database waarvoor er geen album is?
 -- Los op met een outer join en met IS (NOT) NULL in de WHERE clause. 
+
+
+
 24) Maak een overzicht van albumnaam en artiestnaam voor alle albums die terug te vinden zijn in de Chinook database.
+
+
+
 25) Maak voor alle tracks een overzicht van tracknaam, albumnaam, artiestnaam, naam mediatype, naam genre.
 -- Hou er rekening mee dat een track niet altijd een genre heeft. Een track heeft ook niet altijd een album.
+
+
+
 26) Geef de voor de tracks het aantal minuten (gebruik de FLOOR functie om het aantal minuten naar beneden af te ronden).
 -- Geef ook de naam en de prijs van de track.
 -- Selecteer enkel de tracks die minder dan 10 minuten duren.
 -- Orden de tracks aflopend op aantal minuten (afgerond naar beneden), en daarna oplopend op de prijs per track.
+
+
+
 27) Geef de voor de tracks het aantal minuten (gebruik de FLOOR functie om het aantal minuten naar beneden af te ronden).
 -- Geef ook de naam en de prijs van de track.
 -- Selecteer enkel de tracks die minder dan 10 minuten duren.
 -- Orden de tracks aflopend op aantal minuten (afgerond naar beneden), en daarna oplopend op de prijs per track.
 -- Gebruik SELECT TOP om enkel de eerste 100 tracks weer te geven.
+
+
+
 28) Maak een lijst van alle voornamen die zowel de voornaam van een Employee als van een Customer zijn.
 -- Gebruik daarvoor 2 queries die je combineert met INTERSECT.
+
+
+
 29) Maak een lijst van alle voornamen van Customers die geen voornaam zijn van een Employee.
 -- Gebruik daarvoor 2 queries die je combineert met EXCEPT.
+
+
+
 30) Maak een lijst van alle voornamen van Customers die ook de voornaam zijn van een Employee.
 -- Gebruik daarvoor 2 queries die je combineert met INTERSECT
+
+
+
 31) Geef alle binaire getallen met 1 cijfer (dus 0 en 1), 1 cijfer per kolom.
 Dus het resultaat ziet er zo uit:
 rij 1: | 0 |
 rij 2: | 1 |
+
+
+
 32) Geef alle binaire getallen met 2 cijfers, 1 cijfer per kolom. 
 Dus het resultaat ziet er zo uit:
 rij 1: |0|0|
 rij 2: |0|1|
 rij 3: |1|0|
 rij 4: |1|1|
+
+
+
 33) Geef alle binaire getallen met 10 cijfers, 1 cijfer per kolom. 
 Dus het resultaat ziet er zo uit:
 rij 1:    |0|0|0|0|0|0|0|0|0|0|
@@ -89,48 +185,102 @@ rij 1021: |1|1|1|1|1|1|1|1|0|0|
 rij 1022: |1|1|1|1|1|1|1|1|0|1| 
 rij 1023: |1|1|1|1|1|1|1|1|1|0| 
 rij 1024: |1|1|1|1|1|1|1|1|1|1|
+
+
+
 34) Maak een overzicht van de albums met titel, naam artiest, aantal tracks, totale duur van het album (functie SUM), gemiddelde duur per track (functie AVG) en een door komma's gescheiden lijst van de tracknamen.
 -- Gebruik de functie STRING_AGG om de lijst met tracks in 1 cel van het resultaat te maken.
+
+
+
 35) Geef per playlist de naam en het aantal tracks. Je hebt zowel een JOIN als een GROUP BY nodig.
+
+
+
 36) Gebruik letterlijke waarden in een INSERT statement om een record met je eigen naam toe te voegen aan de tabel Customers.
 -- Vul alleen de waarden in die nodig zijn.
+
+
+
 37) Declareer parameters en initialiseer de waarde ervan om te gebruiken in een insert statement waarmee je jezelf toevoegt aan de tabel Employee.
+
+
+
 38) Voer een aankoop uit: maak factuur (Invoice) met een aangekocht artikel (InvoiceLine).
 -- Je hebt hiervoor 2 insert statements nodig.
+
+
+
 39) Schrijf een DELETE statement waarmee je alle Artists verwijdert die geen album hebben.
+
+
+
 40) Verhoog de prijs van 0.99 naar 1.49 voor alle tracks die 0.99 kosten en langer dan 5 minuten duren (UnitPrice in de tabel Track).
+
+
+
 41) Probeer de volgende query uit
 -- DECLARE dient om parameters (die beginnen met @) te declareren
 -- SET dient om een waarde aan een parameter toe te kennen
 -- De parameters kunnen op bepaalde plaatsen in DML statements gebruikt worden
+
+
+
 42) Voer volgend statement uit.
 -- Het lukt niet om dit uit te voeren. Geen paniek.
 -- Lees de foutmeldingen. Begrijp je wat het probleem is?
+
+
+
 43) Geef de vierkantswortel van 2, de vierkantswortel van 30, de som van beide vierkantsworels en de vierkantswortel van de som van beiden.
 -- Declareer parameters in plaats van 2 en 30 letterlijk te gebruiken.
 -- Zet de waarde van de parameters op 2 en 30 en voer uit.
 -- Probeer ook eens uit met andere waarden.
+
+
+
 44) Geef de voor de tracks het aantal minuten (gebruik de FLOOR functie om het aantal minuten naar beneden af te ronden).
 -- Geef ook de naam en de prijs van de track.
 -- Selecteer enkel de tracks die minder dan 10 minuten duren.
 -- Orden de tracks aflopend op aantal minuten (afgerond naar beneden), en daarna oplopend op de prijs per track.
 -- Gebruik SELECT TOP in combinatie met DECLARE en SET om enkel de eerste @aantal tracks weer te geven.
 -- Gebruik ook DECLARE en SET om de maximum tracklengte in te stellen.
+
+
+
 45) Hoeveel artiesten zijn er die geen album hebben? Of minder specifiek verwoord: zijn er artiesten opgeslagen in de database waarvoor er geen album is?
 -- Los op met een ANY subquery. 
+
+
+
 46) Geef de voornaam en familienaam van alle klanten (Customer) waarvoor er een medewerker (Employee) bestaat met dezelfde voornaam.
 -- Los op met een niet-gelinkte subquery.
+
+
+
 47) Geef de voornaam en familienaam van alle klanten (Customer) waarvoor er een medewerker (Employee) bestaat met dezelfde voornaam.
 -- Los op met een niet-gelinkte subquery, gedeclareerd in een parameter (dus met DECLARE en SET).
+
+
+
 48) Schrijf een query die je eigen voornaam in de kolom
 --[Voornaam] zet, gevolgd door een kolom die je eigen
 --familienaam in de kolom [Familienaam] zet.
+
+
+
 49) Geef de verschillende waarden van kolom Company die
 --voorkomen in tabel Customer
+
+
+
 50) Verwijder alles uit de tabel InvoiceLine.
 --Pas op! Andere vragen gaan er niet van uit dat er geen data in die tabel zit.
 --Zorg dus dat je de database kan herstellen
 --of het verwijderen ongedaan kan maken met rollback.
+
+
+
 51) Geef de FirstName, de LastName en Title kolommen
 --van de tabel Employee voor de employees die geen
 --vertegenwoordiger zijn voor klanten en die geen
@@ -142,6 +292,9 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 --via de foreign key FK_CustomerSupportRepId.
 --Hou geen rekening met klanten waarvoor SupportRepId
 --onbekend (dus NULL) is; dus laat die klanten weg.
+
+
+
 52) Maak een schema-object (tabel of view) met de naam
 --MeerDanNLijnen aan dat altijd alle gegevens van de tabel
 --Invoice bevat.
@@ -153,6 +306,9 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 --selecteer daaruit dan alles waarvoor er meer dan
 --13 InvoiceLines zijn. Maak in dat SELECT-statement
 --gebruik van de nieuwe kolom AantalInvoiceLines.
+
+
+
 53) Geef de volgende informatie per unieke klant:
 --voornaam (Customer.FirstName)
 --familienaam (Customer.LastName)
@@ -170,6 +326,9 @@ rij 1024: |1|1|1|1|1|1|1|1|1|1|
 --Facturen kan je vinden in de tabel Invoice
 --De totaalprijs van een factuur kan je vinden
 --in de kolom Invoice.Total
+
+
+
 54) Geef de FirstName, de LastName en Title kolommen
 --van de tabel Employee voor de employees die geen
 --vertegenwoordiger zijn voor klanten en die geen
