@@ -1,13 +1,19 @@
-﻿CREATE TABLE [dbo].[Gebruikers] (
+﻿CREATE TABLE [dbo].[ZipCodes] (
+    [ZipCode]        INT            NOT NULL,
+    [Stad]           NVARCHAR (50)  NOT NULL,
+    [Provincie]      NVARCHAR (50)  NOT NULL,
+    CONSTRAINT [PK_ZipCodes] PRIMARY KEY CLUSTERED ([ZipCode] ASC)
+);
+
+CREATE TABLE [dbo].[Gebruikers] (
     [GebruikersId]   INT            NOT NULL,
     [VoorNaam]       NVARCHAR (50)  NOT NULL,
     [AchterNaam]     NVARCHAR (50)  NOT NULL,
     [Email]          NVARCHAR (50)  NOT NULL,
     [Adres]          NVARCHAR (50)  NOT NULL,
     [ZipCode]        INT            NOT NULL,
-    [Stad]           NVARCHAR (50)  NOT NULL,
-    [Provincie]      NVARCHAR (50)  NOT NULL
-    CONSTRAINT [PK_Gebruikers] PRIMARY KEY CLUSTERED ([GebruikersId] ASC)
+    CONSTRAINT [PK_Gebruikers] PRIMARY KEY CLUSTERED ([GebruikersId] ASC),
+    CONSTRAINT [FK_GebruikersZipCode] FOREIGN KEY ([ZipCode]) REFERENCES [dbo].[ZipCodes] ([ZipCode])
 );
 
 CREATE TABLE [dbo].[Recepten] (
