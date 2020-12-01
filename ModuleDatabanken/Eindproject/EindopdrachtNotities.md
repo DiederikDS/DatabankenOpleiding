@@ -236,7 +236,7 @@ CREATE TABLE [dbo].[ReceptIngrediënt] (
 
 ### 3NF:
 
-CREATE TABLE [dbo].[ZipCodes]
+CREATE TABLE [dbo].[ZipCodes] (
     [ZipCode]        INT            NOT NULL,
     [Stad]           NVARCHAR (50)  NOT NULL,
     [Provincie]      NVARCHAR (50)  NOT NULL,
