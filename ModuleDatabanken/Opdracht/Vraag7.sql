@@ -35,4 +35,9 @@ SELECT 'Klanten' AS Tabel
 	, COUNT(DISTINCT FirstName) AS 'Aantal met zelfde naam'
 	, 'x' AS 'Aantal uniek'
 FROM Customer
-
+UNION
+SELECT 'Medewerkers'
+	, COUNT(*)
+	, COUNT(DISTINCT FirstName)
+	, 'x'
+FROM Employee
