@@ -24,15 +24,14 @@ Hints:
 */
 
 -- Noteer hier je antwoord
-
 SELECT Cu.FirstName AS Voornaam
 	, Cu.LastName AS Familienaam
-	, COUNT(Inv.InvoiceId) AS AantalFacturen
-	, SUM(Inv.Total) AS TotaalUitgaven
-	, AVG(Inv.Total) AS GemiddeldeTotaalprijs
+	, COUNT(Inv.InvoiceId) AS 'Aantal Facturen'
+	, SUM(Inv.Total) AS 'Totaal uitgaven klant'
+	, AVG(Inv.Total) AS 'Gemiddelde totaalprijs per factuur'
 FROM Customer AS Cu
 	JOIN Invoice AS Inv ON Cu.CustomerId = Inv.CustomerId
 GROUP BY Cu.FirstName
 	, Cu.LastName
-ORDER BY GemiddeldeTotaalprijs DESC
+ORDER BY AVG(Inv.Total) DESC
 	, Familienaam ASC
