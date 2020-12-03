@@ -30,14 +30,15 @@ De volgende kolommen worden weergegeven:
 
 -- Noteer hier je antwoord
 
+
 SELECT 'Klanten' AS Tabel
-	, COUNT(*) AS Aantal
-	, COUNT(DISTINCT FirstName) AS 'Aantal met zelfde naam'
-	, 'x' AS 'Aantal uniek'
+	, COUNT(FirstName + LastName) AS Aantal
+	, COUNT(FirstName + LastName) - COUNT(DISTINCT FirstName + LastName) AS 'Aantal met zelfde naam'
+	, COUNT(DISTINCT FirstName + LastName) AS 'Aantal uniek'
 FROM Customer
 UNION
 SELECT 'Medewerkers'
-	, COUNT(*)
-	, COUNT(DISTINCT FirstName)
-	, 'x'
+	, COUNT(FirstName + LastName) AS Aantal
+	, COUNT(FirstName + LastName) - COUNT(DISTINCT FirstName + LastName) AS 'Aantal met zelfde naam'
+	, COUNT(DISTINCT FirstName + LastName) AS 'Aantal uniek'
 FROM Employee
