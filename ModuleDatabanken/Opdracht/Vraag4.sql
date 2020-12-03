@@ -30,7 +30,7 @@ SELECT Cu.FirstName AS Voornaam
 	, SUM(Inv.Total) AS 'Totaal uitgaven klant'
 	, AVG(Inv.Total) AS 'Gemiddelde totaalprijs per factuur'
 FROM Customer AS Cu
-	JOIN Invoice AS Inv ON Cu.CustomerId = Inv.CustomerId
+	FULL OUTER JOIN Invoice AS Inv ON Cu.CustomerId = Inv.CustomerId
 GROUP BY Cu.FirstName
 	, Cu.LastName
 ORDER BY AVG(Inv.Total) DESC
