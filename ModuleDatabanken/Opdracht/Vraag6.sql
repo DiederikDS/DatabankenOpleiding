@@ -13,3 +13,15 @@ Er is een veel-op-veel relatie tussen `Track` en `Playlist`.
 */
 
 -- Noteer hier je antwoord
+
+SELECT Name
+FROM Genre
+WHERE GenreId = ANY (
+	SELECT GenreID
+	FROM Track 
+	WHERE TrackId = ANY (
+		SELECT TrackId
+		FROM PlaylistTrack
+		WHERE PlaylistId NOT IN (
+			SELECT PlaylistId
+			FROM Playlist )))

@@ -21,3 +21,14 @@ Als eerste resultaat krijg je *Iron Maiden*, die tracks van 4 verschillende genr
 */
 
 -- Noteer hier je antwoord
+
+SELECT Art.Name AS Naam
+	, COUNT( DISTINCT Tr.GenreId) AS AantalGenres
+	, COALESCE( STRING_AGG(Gr.Name, ' , ') , '-' ) AS Genres
+FROM Artist AS Art
+	JOIN Album AS Alb ON Art.ArtistId = Alb.ArtistId
+	LEFT OUTER JOIN Track AS Tr ON Alb.AlbumId = Tr.AlbumId
+	RIGHT OUTER JOIN Genre AS Gr ON Tr.GenreId = Gr.GenreId
+GROUP BY Art.Name
+ORDER BY AantalGenres DESC
+	, Naam DESC

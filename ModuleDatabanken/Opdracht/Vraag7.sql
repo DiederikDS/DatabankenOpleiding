@@ -29,3 +29,10 @@ De volgende kolommen worden weergegeven:
 */
 
 -- Noteer hier je antwoord
+
+SELECT 'Klanten' AS Tabel
+	, COUNT(*) AS Aantal
+	, COUNT(DISTINCT FirstName) AS 'Aantal met zelfde naam'
+	, 'x' AS 'Aantal uniek'
+FROM Customer
+

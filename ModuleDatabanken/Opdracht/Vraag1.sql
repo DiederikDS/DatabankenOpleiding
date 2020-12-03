@@ -16,3 +16,9 @@ Je hebt hiervoor de Chinook database **niet** nodig.
 */
 
 -- Noteer hier je antwoord
+
+SELECT 'Voornaam' AS Titel
+	, 'Diederik' AS Naam
+UNION
+SELECT 'Naam'
+	, 'De Soete'

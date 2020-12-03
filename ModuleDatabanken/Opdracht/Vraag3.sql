@@ -14,3 +14,17 @@ Je oplossing moet in een transactie met rollback staan.
 */
 
 -- Noteer hier je antwoord
+
+BEGIN TRANSACTION
+
+ALTER TABLE Customer
+DROP CONSTRAINT FK_SupportRepId
+
+ALTER TABLE Employee
+DROP CONSTRAINT FK_ReportsTo
+
+DROP TABLE Employee
+
+ROLLBACK
+
+COMMIT
