@@ -5,8 +5,7 @@
     [Email]          NVARCHAR (50)  NOT NULL,
     [Adres]          NVARCHAR (50)  NOT NULL,
     [ZipCode]        INT            NOT NULL,
-    [Stad]           NVARCHAR (50)  NOT NULL,
-    [Provincie]      NVARCHAR (50)  NOT NULL
+    [Stad]           NVARCHAR (50)  NOT NULL
     CONSTRAINT [PK_Gebruikers] PRIMARY KEY CLUSTERED ([GebruikersId] ASC)
 );
 

@@ -70,7 +70,6 @@ CREATE TABLE [dbo].[Recepten] (
     [Adres]          NVARCHAR (50)  NOT NULL,
     [ZipCode]        INT            NOT NULL,
     [Stad]           NVARCHAR (50)  NOT NULL,
-    [Provincie]      NVARCHAR (50)  NOT NULL,
     [Review]         NVARCHAR (200)     NULL,
     CONSTRAINT [PK_Recepten] PRIMARY KEY CLUSTERED ([ReceptId] ASC)
 );
@@ -173,8 +172,7 @@ CREATE TABLE [dbo].[Gebruikers] (
     [Email]          NVARCHAR (50)  NOT NULL,
     [Adres]          NVARCHAR (50)  NOT NULL,
     [ZipCode]        INT            NOT NULL,
-    [Stad]           NVARCHAR (50)  NOT NULL,
-    [Provincie]      NVARCHAR (50)  NOT NULL
+    [Stad]           NVARCHAR (50)  NOT NULL
     CONSTRAINT [PK_Gebruikers] PRIMARY KEY CLUSTERED ([GebruikersId] ASC)
 );
 
@@ -247,7 +245,6 @@ CREATE TABLE [dbo].[ReceptIngrediënt] (
 CREATE TABLE [dbo].[ZipCodes] (
     [ZipCode]        INT            NOT NULL,
     [Stad]           NVARCHAR (50)  NOT NULL,
-    [Provincie]      NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_ZipCodes] PRIMARY KEY CLUSTERED ([ZipCode] ASC)
 );
 
@@ -325,4 +322,11 @@ CREATE TABLE [dbo].[ReceptIngrediënt] (
     CONSTRAINT [FK_ReceptIngrediëntIngrediëntId] FOREIGN KEY ([IngrediëntId]) REFERENCES [dbo].[Ingrediënten] ([IngrediëntId])
 );
 
+####Records
+
+INSERT INTO ZipCodes (ZipCode, Stad, Provincie)
+VALUES ();
+
+INSERT INTO Gebruikers (GebruikersId, VoorNaam, AchterNaam, Email, Adres, ZipCode)
+VALUES ();
 

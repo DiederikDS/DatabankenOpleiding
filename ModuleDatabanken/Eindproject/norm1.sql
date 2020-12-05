@@ -13,7 +13,6 @@
     [Adres]          NVARCHAR (50)  NOT NULL,
     [ZipCode]        INT            NOT NULL,
     [Stad]           NVARCHAR (50)  NOT NULL,
-    [Provincie]      NVARCHAR (50)  NOT NULL,
     [Review]         NVARCHAR (200)     NULL,
     CONSTRAINT [PK_Recepten] PRIMARY KEY CLUSTERED ([ReceptId] ASC)
 );
