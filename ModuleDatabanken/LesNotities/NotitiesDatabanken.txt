@@ -64,7 +64,7 @@ Volgorde uitvoering commando's = From, Where, Group by, Having, Order by, Select
 
 Constraint: een statement waaraan de data in een table moet aan voldoen. Gebruikt in een CREATE TABLE statement
 
-Resultaat van ee Query kan je omkeren door WHERE NOT ipv WHERE te gebruiken.
+Resultaat van een Query kan je omkeren door WHERE NOT ipv WHERE te gebruiken.
 
 Normalisatie sql databases zie uitleg op engelstalige wikipedia.(verschillende normaalvormen)
 
