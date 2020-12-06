@@ -682,7 +682,8 @@ VALUES (1, 1)
 CREATE TABLE [dbo].[ZipCodes] (
     [ZipCode]        INT            NOT NULL,
     [Stad]           NVARCHAR (50)  NOT NULL,
-    CONSTRAINT [PK_ZipCodes] PRIMARY KEY CLUSTERED ([ZipCode] ASC)
+    CONSTRAINT [PK_ZipCodes] PRIMARY KEY CLUSTERED ([ZipCode] ASC),
+    CONSTRAINT [UK_ZipCodes] UNIQUE ([Stad] ASC)
 );
 
 CREATE TABLE [dbo].[Gebruikers] (
@@ -693,6 +694,7 @@ CREATE TABLE [dbo].[Gebruikers] (
     [Adres]          NVARCHAR (50)  NOT NULL,
     [ZipCode]        INT            NOT NULL,
     CONSTRAINT [PK_Gebruikers] PRIMARY KEY CLUSTERED ([GebruikersId] ASC),
+    CONSTRAINT [UK_Gebruikers] UNIQUE ([VoorNaam], [AchterNaam], [Adres], [ZipCode] ASC),
     CONSTRAINT [FK_GebruikersZipCode] FOREIGN KEY ([ZipCode]) REFERENCES [dbo].[ZipCodes] ([ZipCode])
 );
 
@@ -704,6 +706,7 @@ CREATE TABLE [dbo].[Recepten] (
     [Tijd]           INT                NULL,
     [AantalPersonen] INT                NULL,
     CONSTRAINT [PK_Recepten] PRIMARY KEY CLUSTERED ([ReceptId] ASC),
+    CONSTRAINT [UK_Recepten] UNIQUE ([ReceptNaam], [GebruikersId] ASC),
     CONSTRAINT [FK_ReceptenGebruikersId] FOREIGN KEY ([GebruikersId]) REFERENCES [dbo].[Gebruikers] ([GebruikersId])
 );
 
@@ -713,6 +716,7 @@ CREATE TABLE [dbo].[Reviews] (
     [ReceptId]     INT             NOT NULL,
     [GebruikersId] INT             NOT NULL
     CONSTRAINT [PK_Reviews] PRIMARY KEY CLUSTERED ([ReviewId] ASC),
+    CONSTRAINT [UK_Reviews] UNIQUE ([Review], [ReceptId], [GebruikersId] ASC),
     CONSTRAINT [FK_ReviewsReceptId] FOREIGN KEY ([ReceptId]) REFERENCES [dbo].[Recepten] ([ReceptId]),
     CONSTRAINT [FK_ReviewsGebruikersId] FOREIGN KEY ([GebruikersId]) REFERENCES [dbo].[Gebruikers] ([GebruikersId])
 );
@@ -720,19 +724,22 @@ CREATE TABLE [dbo].[Reviews] (
 CREATE TABLE [dbo].[Maaltijden] (
     [MaaltijdId]   INT            NOT NULL,
     [Maaltijd]     NVARCHAR (50)  NOT NULL,
-    CONSTRAINT [PK_Maaltijden] PRIMARY KEY CLUSTERED ([MaaltijdId] ASC)
+    CONSTRAINT [PK_Maaltijden] PRIMARY KEY CLUSTERED ([MaaltijdId] ASC),
+    CONSTRAINT [UK_Maaltijden] UNIQUE ([Maaltijd] ASC)
 );
 
 CREATE TABLE [dbo].[Labels] (
     [LabelId]   INT            NOT NULL,
     [Label]     NVARCHAR (50)  NOT NULL,
-    CONSTRAINT [PK_Labels] PRIMARY KEY CLUSTERED ([LabelId] ASC)
+    CONSTRAINT [PK_Labels] PRIMARY KEY CLUSTERED ([LabelId] ASC),
+    CONSTRAINT [UK_Labels] UNIQUE ([Label] ASC)
 );
 
 CREATE TABLE [dbo].[Ingrediënten] (
     [IngrediëntId]   INT            NOT NULL,
     [Ingrediënt]     NVARCHAR (50)  NOT NULL,
-    CONSTRAINT [PK_Ingrediënten] PRIMARY KEY CLUSTERED ([IngrediëntId] ASC)
+    CONSTRAINT [PK_Ingrediënten] PRIMARY KEY CLUSTERED ([IngrediëntId] ASC),
+    CONSTRAINT [UK_Ingrediënten] UNIQUE ([Ingrediënt] ASC)
 );
 
 CREATE TABLE [dbo].[ReceptMaaltijd] (
