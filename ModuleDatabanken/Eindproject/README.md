@@ -36,12 +36,12 @@ Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, 
  - Als actieve gebruiker wil ik graag de labels van mijn recept veranderen zodat deze beter representatief zijn voor het recept.
 
  - Als passieve gebruiker zoek ik een leuk recept voor het paasontbijt.
- - Als passieve gebruiker heb ik een beperkt aantal ingrediënten in huis, ik zoek dus de recepten die enkel deze recepten bevat.
+ - Als passieve gebruiker ben ik opzoek naar een recept die tortellini bevat, want ik heb veel van dat ingrediënt in huis.
  - Als vegetarische passieve gebruiker zoek ik alle recepten die vegetarisch zijn.
- - Als passieve gebruiker zoek ik alle recepten voor een dinner die het label 'Italiaans' hebben.
+ - Als passieve gebruiker zoek ik alle recepten van gebruiker: Sarah Peeters, want ik probeerde reeds een gerecht van haar.
 
- - Als beheerder wil ik een revieuw verwijderen met taalgebruik die niet voldoet aan onze gebruikersovereenkomst.
+ - Als beheerder wil ik een review verwijderen met taalgebruik die niet voldoet aan onze gebruikersovereenkomst.
  - Als beheerder wil ik een gebruiker verwijderen die al een lange tijd inactief is.
- - Als beheerder wil ik een recept verwijderen enkel slechte revieuws heeft.
+ - Als beheerder wil ik een recept 5 'Tomatensoep' verwijderen, want deze heeft enkel slechte reviews.
 
 
