@@ -18,7 +18,7 @@ Een applicatie voor het delen van recepten. Je kan recepten uploaden, bekijken, 
 
  - Gebruikers
  - Recepten
- - Ingredienten
+ - Ingredienten 
  - Score
  - Revieuws
  - Labels
