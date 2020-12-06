@@ -322,6 +322,38 @@ CREATE TABLE [dbo].[ReceptIngrediënt] (
     CONSTRAINT [FK_ReceptIngrediëntIngrediëntId] FOREIGN KEY ([IngrediëntId]) REFERENCES [dbo].[Ingrediënten] ([IngrediëntId])
 );
 
+#### View
+
+CREATE VIEW Grieks
+	AS SELECT Re.ReceptId 
+		, ReceptNaam
+		, Re.GebruikersId
+	FROM Recepten AS Re
+		FULL OUTER JOIN ReceptLabel AS ReLa ON Re.ReceptId = ReLa.ReceptId
+		FULL OUTER JOIN Labels AS Le ON ReLa.LabelId = Le.LabelId
+	WHERE Label = 'Grieks'
+
+#### Procedure
+
+CREATE PROCEDURE NieuweGebruiker @Zipcode INT, @Stad NVARCHAR(50), @GebruikersId INT, @Voornaam NVARCHAR(50), @Achternaam NVARCHAR(50), @Email NVARCHAR(50), @Adres NVARCHAR(50)
+AS
+
+IF @Zipcode IN (SELECT ZipCode FROM ZipCodes)
+BEGIN
+	INSERT INTO Gebruikers (GebruikersId, VoorNaam, AchterNaam, Email, Adres, ZipCode)
+	VALUES (@GebruikersId, @Voornaam, @Achternaam, @Email, @Adres, @Zipcode)
+END
+ELSE
+BEGIN
+	INSERT INTO ZipCodes (ZipCode, Stad)
+	VALUES (@Zipcode, @Stad)
+
+	INSERT INTO Gebruikers (GebruikersId, VoorNaam, AchterNaam, Email, Adres, ZipCode)
+	VALUES (@GebruikersId, @Voornaam, @Achternaam, @Email, @Adres, @Zipcode)
+END
+
+RETURN 0
+
 ####Records
 
 INSERT INTO ZipCodes (ZipCode, Stad)
@@ -803,4 +835,3 @@ VALUES (1, 1)
 	,(22, 26)
 	,(22, 72)
 	,(22, 17)
-
