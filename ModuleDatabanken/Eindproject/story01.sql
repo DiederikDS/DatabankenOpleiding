@@ -2,11 +2,11 @@
 
 BEGIN TRANSACTION
 
-INSERT INTO Recepten (ReceptId, ReceptNaam, GebruikersId, Beschrijving, Tijd, AantalPersonen)
-VALUES (23, 'Wortel pannekoeken', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 30, 2)
+INSERT INTO Recepten (ReceptNaam, GebruikersId, Beschrijving, Tijd, AantalPersonen)
+VALUES ('Wortel pannekoeken', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 30, 2)
 
-INSERT INTO Ingrediënten (IngrediëntId, Ingrediënt)
-VALUES (74, 'Walnoot')
+INSERT INTO Ingrediënten (Ingrediënt)
+VALUES ('Walnoot')
 
 INSERT INTO ReceptMaaltijd (ReceptId, MaaltijdId)
 VALUES (23, 1)

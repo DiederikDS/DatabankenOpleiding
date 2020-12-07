@@ -5,7 +5,7 @@
 );
 
 CREATE TABLE [dbo].[Gebruikers] (
-    [GebruikersId]   INT            NOT NULL,
+    [GebruikersId]   INT            NOT NULL IDENTITY,
     [VoorNaam]       NVARCHAR (50)  NOT NULL,
     [AchterNaam]     NVARCHAR (50)  NOT NULL,
     [Email]          NVARCHAR (50)  NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Gebruikers] (
 );
 
 CREATE TABLE [dbo].[Recepten] (
-    [ReceptId]       INT            NOT NULL,
+    [ReceptId]       INT            NOT NULL IDENTITY,
     [ReceptNaam]     NVARCHAR (50)  NOT NULL,
     [GebruikersId]   INT            NOT NULL,
     [Beschrijving]   NVARCHAR (500) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[Recepten] (
 );
 
 CREATE TABLE [dbo].[Reviews] (
-    [ReviewId]     INT             NOT NULL,
+    [ReviewId]     INT             NOT NULL IDENTITY,
     [Review]       NVARCHAR (200)  NOT NULL,
     [ReceptId]     INT             NOT NULL,
     [GebruikersId] INT             NOT NULL
@@ -37,19 +37,19 @@ CREATE TABLE [dbo].[Reviews] (
 );
 
 CREATE TABLE [dbo].[Maaltijden] (
-    [MaaltijdId]   INT            NOT NULL,
+    [MaaltijdId]   INT            NOT NULL IDENTITY,
     [Maaltijd]     NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_Maaltijden] PRIMARY KEY CLUSTERED ([MaaltijdId] ASC)
 );
 
 CREATE TABLE [dbo].[Labels] (
-    [LabelId]   INT            NOT NULL,
+    [LabelId]   INT            NOT NULL IDENTITY,
     [Label]     NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_Labels] PRIMARY KEY CLUSTERED ([LabelId] ASC)
 );
 
 CREATE TABLE [dbo].[Ingrediënten] (
-    [IngrediëntId]   INT            NOT NULL,
+    [IngrediëntId]   INT            NOT NULL IDENTITY,
     [Ingrediënt]     NVARCHAR (50)  NOT NULL,
     CONSTRAINT [PK_Ingrediënten] PRIMARY KEY CLUSTERED ([IngrediëntId] ASC)
 );
@@ -85,87 +85,87 @@ VALUES (9000, 'Gent')
 	, (3000, 'Leuven')
 	, (3118, 'Werchter')
 
-INSERT INTO Gebruikers (GebruikersId, VoorNaam, AchterNaam, Email, Adres, ZipCode)
-VALUES (1, 'Diederik', 'De Soete', 'diederik.desoete@gmail.com', 'Parklaan 17', 9000)
-	, (2, 'Sarah', 'Peeters', 'sarah.Peeters@gmail.com', 'Hazenpad 4', 8210)
-	, (3, 'Tom', 'Janssens', 'tom.janssens@gmail.com', 'Academiestraat 5', 2000)
-	, (4, 'Pieter', 'Maes', 'pieter.maes@gmail.com', 'Augustijnenrei 34', 3000)
-	, (5, 'Anton', 'Mertens', 'anton.mertens@hotmail.com', 'Bollaardstraat 29', 3118)
+INSERT INTO Gebruikers (VoorNaam, AchterNaam, Email, Adres, ZipCode)
+VALUES ('Diederik', 'De Soete', 'diederik.desoete@gmail.com', 'Parklaan 17', 9000)
+	, ('Sarah', 'Peeters', 'sarah.Peeters@gmail.com', 'Hazenpad 4', 8210)
+	, ('Tom', 'Janssens', 'tom.janssens@gmail.com', 'Academiestraat 5', 2000)
+	, ('Pieter', 'Maes', 'pieter.maes@gmail.com', 'Augustijnenrei 34', 3000)
+	, ('Anton', 'Mertens', 'anton.mertens@hotmail.com', 'Bollaardstraat 29', 3118)
 
-INSERT INTO Recepten (ReceptId, ReceptNaam, GebruikersId, Beschrijving, Tijd, AantalPersonen)
-VALUES (1, 'Gevulde croissantjes met eiersalade', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 20, 2)
-	, (2, 'Cupcakes', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', NULL, 3)
-	, (3, 'Wraps met aardappel en bacon', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 25, 2)
-	, (4, 'Tortellini ovenschotel met kip', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 40, 3)
-	, (5, 'Tomatensoep', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 30, NULL)
+INSERT INTO Recepten (ReceptNaam, GebruikersId, Beschrijving, Tijd, AantalPersonen)
+VALUES ('Gevulde croissantjes met eiersalade', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 20, 2)
+	, ('Cupcakes', 4, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', NULL, 3)
+	, ('Wraps met aardappel en bacon', 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 25, 2)
+	, ('Tortellini ovenschotel met kip', 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 40, 3)
+	, ('Tomatensoep', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...', 30, NULL)
 
-INSERT INTO Reviews (ReviewId, Review, ReceptId, GebruikersId)
-VALUES (1, 'Super lekker', 1, 5)
-	, (2, 'Krokant!', 3, 4)
-	, (3, 'Super lekker als dessert', 2, 3)
-	, (4, 'Simpel en gezond', 4, 1)
-	, (5, 'Niet lekker', 5, 2)
+INSERT INTO Reviews (Review, ReceptId, GebruikersId)
+VALUES ('Super lekker', 1, 5)
+	, ('Krokant!', 3, 4)
+	, ('Super lekker als dessert', 2, 3)
+	, ('Simpel en gezond', 4, 1)
+	, ('Niet lekker', 5, 2)
 
-INSERT INTO Maaltijden (MaaltijdId, Maaltijd)
-VALUES (1, 'Ontbijt')
-	, (2, 'Aperitief')
-	, (3, 'Voorgerecht')
-	, (4, 'Lunch')
-	, (5, 'Dessert')
-	, (6, '4-uurtje')
-	, (7, 'Dinner')
+INSERT INTO Maaltijden (Maaltijd)
+VALUES ('Ontbijt')
+	, ('Aperitief')
+	, ('Voorgerecht')
+	, ('Lunch')
+	, ('Dessert')
+	, ('4-uurtje')
+	, ('Dinner')
 
-INSERT INTO Labels (LabelId, Label)
-VALUES (1, 'Pasen')
-	, (2, 'Sinterklaas')
-	, (3, 'Halloween')
-	, (4, 'Vlees')
-	, (5, 'Kip')
-	, (6, 'Vis')
-	, (7, 'Pattiserie')
-	, (8, 'Soep')
-	, (9, 'Salade')
-	, (10, 'Alcohol')
-	, (11, 'Italiaans')
-	, (12, 'Amerikaans')
-	, (13, 'Oosters')
-	, (14, 'Vlaams')
-	, (15, 'Mexicaans')
-	, (16, 'Grieks')
-	, (17, 'Vegetarisch')
+INSERT INTO Labels (Label)
+VALUES ('Pasen')
+	, ('Sinterklaas')
+	, ('Halloween')
+	, ('Vlees')
+	, ('Kip')
+	, ('Vis')
+	, ('Pattiserie')
+	, ('Soep')
+	, ('Salade')
+	, ('Alcohol')
+	, ('Italiaans')
+	, ('Amerikaans')
+	, ('Oosters')
+	, ('Vlaams')
+	, ('Mexicaans')
+	, ('Grieks')
+	, ('Vegetarisch')
 
-INSERT INTO Ingrediënten (IngrediëntId, Ingrediënt)
-VALUES (1, 'Ei')
-	, (2, 'Ham')
-	, (3, 'Mayonaise')
-	, (4, 'Bieslook')
-	, (5, 'Croissant')
-	, (6, 'Zout')
-	, (7, 'Peper')
-	, (8, 'Suiker')
-	, (9, 'Nootmuskaat')
-	, (10, 'Boter')
-	, (11, 'Bakmeel')
-	, (12, 'Speculaas')
-	, (13, 'Kruidnoot')
-	, (14, 'Roomkaas')
-	, (15, 'Wrap')
-	, (16, 'Aardappel')
-	, (17, 'Paprika')
-	, (18, 'Bacon')
-	, (19, 'Melk')
-	, (20, 'Peterselie')
-	, (21, 'Rucola')
-	, (22, 'Kaas')
-	, (23, 'Tortellini')
-	, (24, 'Kipfilet')
-	, (25, 'Ui')
-	, (26, 'Tomaat')
-	, (27, 'Kippenbouillon')
-	, (28, 'Knoflook')
-	, (29, 'Room')
-	, (30, 'Basilicum')
-	, (68, 'Wortel')
+INSERT INTO Ingrediënten (Ingrediënt)
+VALUES ('Ei')
+	, ('Ham')
+	, ('Mayonaise')
+	, ('Bieslook')
+	, ('Croissant')
+	, ('Zout')
+	, ('Peper')
+	, ('Suiker')
+	, ('Nootmuskaat')
+	, ('Boter')
+	, ('Bakmeel')
+	, ('Speculaas')
+	, ('Kruidnoot')
+	, ('Roomkaas')
+	, ('Wrap')
+	, ('Aardappel')
+	, ('Paprika')
+	, ('Bacon')
+	, ('Melk')
+	, ('Peterselie')
+	, ('Rucola')
+	, ('Kaas')
+	, ('Tortellini')
+	, ('Kipfilet')
+	, ('Ui')
+	, ('Tomaat')
+	, ('Kippenbouillon')
+	, ('Knoflook')
+	, ('Room')
+	, ('Basilicum')
+	, ('Wortel')
 
 INSERT INTO ReceptMaaltijd (ReceptId, MaaltijdId)
 VALUES (1, 1)
@@ -228,7 +228,7 @@ VALUES (1, 1)
 	,(5, 27)
 	,(5, 28)
 	,(5, 25)
-	,(5, 68)
+	,(5, 31)
 	,(5, 29)
 	,(5, 30)
 	,(5, 6)
