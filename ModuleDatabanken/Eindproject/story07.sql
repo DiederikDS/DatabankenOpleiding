@@ -1,4 +1,4 @@
-﻿-- Als passieve gebruiker zoek ik alle recepten van gebruiker: Sarah Peeters, want ik probeerde reeds een gerecht van haar.
+﻿-- Als passieve gebruiker zoek ik alle recepten van gebruiker: Sarah Peeters, want ik probeerde reeds eerder een gerecht van haar.
 
 BEGIN TRANSACTION
 

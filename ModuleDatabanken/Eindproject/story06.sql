@@ -1,4 +1,4 @@
-﻿-- Als vegetarische passieve gebruiker zoek ik alle recepten die vegetarisch zijn.
+﻿-- Als vegetarische passieve gebruiker zoek ik alle recepten die vegetarisch zijn zodat ik 1 hiervan kan volgen.
 
 BEGIN TRANSACTION
 

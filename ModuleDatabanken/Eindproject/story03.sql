@@ -1,4 +1,4 @@
-﻿-- Als actieve gebruiker wil ik graag de labels van mijn recept veranderen zodat deze beter representatief zijn voor het recept.
+﻿-- Als actieve gebruiker wil ik graag de labels van mijn recept veranderen zodat deze beter representatief zijn voor het recept en in meer relevante zoek opdrachten gevonden kunnen worden.
 
 UPDATE ReceptLabel
 SET LabelId = 10

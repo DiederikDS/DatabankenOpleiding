@@ -1,4 +1,4 @@
-﻿--  Als beheerder wil ik een gebruiker verwijderen die al een lange tijd inactief is. (27: Maxim Visser)
+﻿--  Als beheerder wil ik een gebruiker verwijderen die al een lange tijd inactief is (27: Maxim Visser), zodat dit geen onnodige plaats opneemt in de database.
 
 BEGIN TRANSACTION
 

@@ -1,4 +1,4 @@
-﻿-- Als passieve gebruiker zoek ik een leuk recept voor het paasontbijt
+﻿-- Als passieve gebruiker zoek ik een leuk recept zodat ik een leuk gerecht kan maken op het paasontbijt.
 
 BEGIN TRANSACTION
 
